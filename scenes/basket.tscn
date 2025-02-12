@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1qquommjjr2q"]
+
+[ext_resource type="Texture2D" uid="uid://dlfrt8ytk1ncl" path="res://assets/art/Basket.png" id="1_1g1xm"]
+[ext_resource type="Script" path="res://scenes/basket.gd" id="2_fn8ni"]
+
+[node name="Basket" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1g1xm")
+script = ExtResource("2_fn8ni")
+
+[node name="BasketArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BasketArea"]
+polygon = PackedVector2Array(-30, 12, -30, 20, -16, 30, 14, 30, 24, 26, 28, 22, 30, 12, 22, 14, 12, 14, 2, 14, -10, 14, -18, 16)
+
+[connection signal="area_entered" from="BasketArea" to="." method="_on_basket_area_area_entered"]
