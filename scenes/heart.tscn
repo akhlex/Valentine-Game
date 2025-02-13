@@ -19,3 +19,9 @@ texture = ExtResource("1_g54s5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HeartArea"]
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_newko")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, -1.5)
+scale = Vector2(1.5, 1.45)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

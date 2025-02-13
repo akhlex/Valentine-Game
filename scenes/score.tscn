@@ -1,7 +1,20 @@
-[gd_scene format=3 uid="uid://djk08fnuureif"]
+[gd_scene load_steps=3 format=3 uid="uid://djk08fnuureif"]
+
+[ext_resource type="Script" path="res://scenes/score.gd" id="1_dg1jp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_us1ip"]
 
 [node name="Score" type="CanvasLayer"]
+script = ExtResource("1_dg1jp")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.025
+offset_left = -24.0
+offset_top = 72.0
+offset_right = 16.0
+offset_bottom = 78.8
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_us1ip")
