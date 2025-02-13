@@ -11,3 +11,7 @@ func _on_heart_timer_timeout():
 	
 	heart_instance.position = $Path2D/PathFollow2D/Marker2D.global_position
 	add_child(heart_instance)
+
+
+func _on_game_timer_timeout():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")

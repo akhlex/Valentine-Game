@@ -48,5 +48,12 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("3_3tlw6")
 texture_hover = ExtResource("5_gvpmo")
 
+[node name="EndScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 344.0
+offset_right = 592.0
+offset_bottom = 367.0
+
 [connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
