@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://b36k8226spfwb"]
+[gd_scene load_steps=7 format=3 uid="uid://b36k8226spfwb"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_8yflg"]
+[ext_resource type="Texture2D" uid="uid://bker1gg8lavjt" path="res://assets/art/GameOver.png" id="1_lb7uf"]
+[ext_resource type="Texture2D" uid="uid://my2iqy0x1k40" path="res://assets/art/PlayAgainButton.png" id="2_genf4"]
+[ext_resource type="Texture2D" uid="uid://bxxui3b2vasbx" path="res://assets/art/QuitButton.png" id="3_3tlw6"]
+[ext_resource type="Texture2D" uid="uid://cnqsc40yefpgb" path="res://assets/art/PlayAgainHoverButton.png" id="3_4amqh"]
+[ext_resource type="Texture2D" uid="uid://c3qgpt81p3irh" path="res://assets/art/QuitHoverButton.png" id="5_gvpmo"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -7,3 +14,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8yflg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_lb7uf")
+
+[node name="PlayAgainButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 384.0
+offset_right = 636.0
+offset_bottom = 684.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_genf4")
+texture_hover = ExtResource("3_4amqh")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 940.0
+offset_bottom = 684.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_3tlw6")
+texture_hover = ExtResource("5_gvpmo")
+
+[connection signal="pressed" from="PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
