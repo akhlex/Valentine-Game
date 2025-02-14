@@ -15,3 +15,7 @@ func _on_heart_timer_timeout():
 
 func _on_game_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
+	
+func _ready():
+	$GameMusic.play()
