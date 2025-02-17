@@ -6,6 +6,7 @@ func _process(delta):
 
 
 func _on_play_again_button_pressed():
+	Global.score = 0
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 	
 	
